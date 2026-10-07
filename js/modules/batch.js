@@ -1,7 +1,7 @@
 // Batch & Expiry tracking: manage product batches with production dates, expiry dates, and quantities.
 import * as idb from '../db/idb.js';
 import * as UI from '../core/ui.js';
-import { esc, today, fmtDate, fmtNum, daysUntil } from '../core/utils.js';
+import { esc, today, fmtDate, fmtNum } from '../core/utils.js';
 import * as Auth from '../services/auth.js';
 import * as Catalog from '../services/catalog.js';
 import { tr } from '../i18n/i18n.js';
