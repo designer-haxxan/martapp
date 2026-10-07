@@ -285,13 +285,15 @@ async function renderDetail(el, id) {
   });
 }
 
-export async function render(el, route) {
-  if (!Auth.can('purchase.manage')) {
-    $(el).html(UI.pageHeader(tr('suppliers'), '') + UI.emptyState('Access denied', 'lock'));
-    return;
-  }
+export default {
+  async render(el, { route }) {
+    if (!Auth.can('purchase.manage')) {
+      $(el).html(UI.pageHeader(tr('suppliers'), '') + UI.emptyState('Access denied', 'lock'));
+      return;
+    }
 
-  const [, id] = route.split('/');
-  if (id) renderDetail(el, decodeURIComponent(id));
-  else renderList(el);
+    const [, id] = route.split('/');
+    if (id) renderDetail(el, decodeURIComponent(id));
+    else renderList(el);
+  }
 }

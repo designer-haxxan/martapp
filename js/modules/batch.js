@@ -286,13 +286,15 @@ async function renderDetail(el, id) {
   });
 }
 
-export async function render(el, route) {
-  if (!Auth.can('stock.manage')) {
-    $(el).html(UI.pageHeader(tr('batchTracking'), '') + UI.emptyState('Access denied', 'lock'));
-    return;
-  }
+export default {
+  async render(el, { route }) {
+    if (!Auth.can('stock.manage')) {
+      $(el).html(UI.pageHeader(tr('batchTracking'), '') + UI.emptyState('Access denied', 'lock'));
+      return;
+    }
 
-  const [, id] = route.split('/');
-  if (id) renderDetail(el, decodeURIComponent(id));
-  else renderList(el);
+    const [, id] = route.split('/');
+    if (id) renderDetail(el, decodeURIComponent(id));
+    else renderList(el);
+  }
 }
