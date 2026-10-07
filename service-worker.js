@@ -2,15 +2,15 @@
    Bump VERSION whenever any cached file changes; clients update automatically. */
 // Cache names are namespaced: other apps on designer-haxxan.github.io share Cache Storage with this one.
 const APP_ID = 'disterp';
-const VERSION = `${APP_ID}-v1.3.1`;
+const VERSION = `${APP_ID}-v1.4.0`;
 const isOwnCache = (key) => key.startsWith(`${APP_ID}-`) || /^saleapp-v/.test(key); // saleapp-v* = this app's older builds
 const SHELL = [
   './', './index.html', './manifest.json', './css/app.css',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png', './icons/favicon-32.png',
-  './js/app.js', './js/config.js',
+  './js/app.js', './js/config.js', './js/i18n/i18n.js', './js/i18n/translations.js',
   './js/core/link-login.js', './js/core/settings.js', './js/core/ui.js', './js/core/utils.js', './js/core/views.js',
   './js/db/idb.js', './js/db/schema.js',
-  './js/modules/accounts.js', './js/modules/backup.js', './js/modules/dashboard.js', './js/modules/documents.js',
+  './js/modules/accounts.js', './js/modules/backup.js', './js/modules/batch.js', './js/modules/dashboard.js', './js/modules/documents.js', './js/modules/suppliers.js',
   './js/modules/parties.js', './js/modules/pos.js', './js/modules/products.js', './js/modules/settings.js', './js/modules/stock.js', './js/modules/vouchers.js',
   './js/printer/escpos.js', './js/printer/printer.js', './js/printer/raster.js', './js/printer/receipt.js',
   './js/reports/reports.js', './js/scanner/scanner.js',
